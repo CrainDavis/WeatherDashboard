@@ -9,6 +9,22 @@ function displayWeatherInfo() {
 
       // if input has text in it, retrieve data
       if (searchedCity != "") {
+
+        // remove "hide" class from weather info sections (once user enters in a city name)
+        $("#currentWeatherSection").removeClass("hide");
+        $("#weatherImage").removeClass("hide");
+        $("#forecastWeatherSection").removeClass("hide");
+
+        // insert a random image into HTML
+        function displayRandomImage() {
+          var randomImage = ["img-1.jpg", "img-2.jpg", "img-3.jpg", "img-4.jpg", "img-5.jpg", "img-6.jpg", "img-7.jpg", "img-8.jpg", "img-9.jpg", "img-10.jpg", "img-11.jpg", "img-12.jpg", "img-13.jpg", "img-14.jpg", "img-15.jpg", "img-16.jpg", "img-17.jpg"];
+
+          for (var i = 0; i < randomImage.length; i++)
+          $("#weatherImage").attr("src", "assets/images/" + randomImage[Math.floor(Math.random() * randomImage.length)]);
+        }
+
+        displayRandomImage();
+        
         function displayCurrentWeather() {
           // create variable to hold site URL with the user's search input
           var mainQueryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + searchedCity + "&units=imperial" + "&appid=289f73c10e5aeb27cc83c6167ef20a5d"
@@ -19,17 +35,19 @@ function displayWeatherInfo() {
             method: "GET"
           }).then(function(mainResponse) {
             // print object in console
-            console.log("Current Weather: " + mainResponse);
+            console.log("weather info via city name:");
+            console.log(mainResponse);
 
+            // variable for weather icons
             var iconURL = "https://openweathermap.org/img/wn/" + mainResponse.weather[0].icon + "@2x.png";
 
             // fill in HTML city, date, icon
             $("#cityName").css("background-color", "#081e34").text(mainResponse.name);
             $("#currentDate").text(" (" + moment().format("l") + ") ");
             $("#currentIcon").attr("src", iconURL);
-            // fill in HTML weather info
+            // fill in HTML current weather info
             $("#currentWeather").text(mainResponse.weather[0].description);
-            $("#currentTemp").text(mainResponse.main.temp + "°F");
+            $("#currentTemp").text(Math.floor(mainResponse.main.temp) + "°F");
             $("#currentHumidity").text(mainResponse.main.humidity + "%");
             $("#currentWind").text(mainResponse.wind.speed + " mph");
           
@@ -45,8 +63,10 @@ function displayWeatherInfo() {
               url: UVindexURL,
               method: "GET"
             }).then(function(uvResponse) {
-              console.log("UV Index: " + uvResponse);
+              console.log("UV index info:");
+              console.log(uvResponse);
 
+              // fill in UV index text and determine color based on number
               $("#uvIndexColor").text(uvResponse.value);
               if (uvResponse.value >= 0 && uvResponse.value < 3) {
                 $("#uvIndexColor").css("background-color", "#55c50f");
@@ -63,6 +83,7 @@ function displayWeatherInfo() {
           });
         }
 
+        // call function
         displayCurrentWeather();
 
         function showForecast() {
@@ -74,48 +95,51 @@ function displayWeatherInfo() {
             url: forecastURL,
             method: "GET"
           }).then(function(forecastResponse) {
-            console.log("5-Day Forecast Info: " + forecastResponse);
+            console.log("5-day forecast info:");
+            console.log(forecastResponse);
 
             // fill in HTML with info from 12PM each day
             // day 1:
             $("#forecastDate1").text(moment().add(1, 'days').format("l"));
             $("#forecastIcon1").attr("src", "https://openweathermap.org/img/wn/" + forecastResponse.list[3].weather[0].icon + "@2x.png")
-            $("#forecastTemp1").text("temperature: " + forecastResponse.list[3].main.temp + "°F");
+            $("#forecastTemp1").text("temperature: " + Math.floor(forecastResponse.list[3].main.temp) + "°F");
             $("#forecastHumidity1").text("humidity: " + forecastResponse.list[3].main.humidity + "%");
 
             // day 2:
             $("#forecastDate2").text(moment().add(2, 'days').format("l"));
             $("#forecastIcon2").attr("src", "https://openweathermap.org/img/wn/" + forecastResponse.list[11].weather[0].icon + "@2x.png")
-            $("#forecastTemp2").text("temperature: " + forecastResponse.list[11].main.temp + "°F");
+            $("#forecastTemp2").text("temperature: " + Math.floor(forecastResponse.list[11].main.temp) + "°F");
             $("#forecastHumidity2").text("humidity: " + forecastResponse.list[11].main.humidity + "%");
 
             // day 3:
             $("#forecastDate3").text(moment().add(3, 'days').format("l"));
             $("#forecastIcon3").attr("src", "https://openweathermap.org/img/wn/" + forecastResponse.list[19].weather[0].icon + "@2x.png")
-            $("#forecastTemp3").text("temperature: " + forecastResponse.list[19].main.temp + "°F");
+            $("#forecastTemp3").text("temperature: " + Math.floor(forecastResponse.list[19].main.temp) + "°F");
             $("#forecastHumidity3").text("humidity: " + forecastResponse.list[19].main.humidity + "%");
 
             // day 4:
             $("#forecastDate4").text(moment().add(4, 'days').format("l"));
             $("#forecastIcon4").attr("src", "https://openweathermap.org/img/wn/" + forecastResponse.list[27].weather[0].icon + "@2x.png")
-            $("#forecastTemp4").text("temperature: " + forecastResponse.list[27].main.temp + "°F");
+            $("#forecastTemp4").text("temperature: " + Math.floor(forecastResponse.list[27].main.temp) + "°F");
             $("#forecastHumidity4").text("humidity: " + forecastResponse.list[27].main.humidity + "%");
 
             // day 5:
             $("#forecastDate5").text(moment().add(5, 'days').format("l"));
             $("#forecastIcon5").attr("src", "https://openweathermap.org/img/wn/" + forecastResponse.list[35].weather[0].icon + "@2x.png")
-            $("#forecastTemp5").text("temperature: " + forecastResponse.list[35].main.temp + "°F");
+            $("#forecastTemp5").text("temperature: " + Math.floor(forecastResponse.list[35].main.temp) + "°F");
             $("#forecastHumidity5").text("humidity: " + forecastResponse.list[35].main.humidity + "%");
           })
         }
 
+        // call function
         showForecast();
 
-      // otherwise, alert the user to input a city name 
+      // if search field is left blank, alert the user to input a city name 
       } else {
         alert("You must enter a city name!");
       }
     })
   }
 
+  // call function
   displayWeatherInfo();
