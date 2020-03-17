@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- my CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Weather Dashboard</title>
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="jumbotron-header">Weather Dashboard</h1>
+    </div>
+    <div class="container-fluid">
+        <div class="d-flex flex-row">
+            <div id="searchArea" class="d-flex flex-column col-3">
+                <form>
+                    <div class="form-group">
+                        <input class="form-control" id="searchedCity" placeholder="search for a city">
+                        <button type="submit" id="searchBtn" class="btn btn-primary">
+                          <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+                <hr id="hr1">
+                <div class="list-group" id="savedSearches">
+                    <!-- <a href="#" class="list-group-item list-group-item-action">test city</a> -->
+                </div>
+                <button id="clearBtn" class="btn btn-primary">clear search history</button>
+                <br>
+            </div>
+            <div id="weatherInfo" class="d-flex flex-column col-9">
+                <div class="card current-city-card">
+                    <div id="current-weather-card" class="card-body">
+                      <h1 id="cityName"></h1>
+                      <h1 id="currentDate"></h1>
+                      <img id="currentIcon">
+                      <hr id="hr2"><br>
+                      <p>Weather: 
+                        <span id="currentWeather"></span>
+                      </p>
+                      <p>Temperature: 
+                        <span id="currentTemp"></span>
+                      </p>
+                      <p>Humidity: 
+                        <span id="currentHumidity"></span>
+                      </p>
+                      <p>Wind Speed: 
+                        <span id="currentWind"></span>
+                      </p>
+                      <p id="currentUV">UV index: 
+                        <span id="uvIndexColor"></span>
+                      </p>
+                    </div>
+                </div>
+                <br>
+                <h2>5-Day Forecast:</h2>
+                <div class="d-flex flex-row justify-content-between">
+                    <div id="forecastCard1" class="card text-white bg-primary mb-3" style="min-width:15%; height:100%">
+                        <div class="card-body">
+                          <h5 id="forecastDate1" class="card-title"></h5>
+                          <img id="forecastIcon1">
+                          <p id="forecastTemp1" class="card-text"></p>
+                          <p id="forecastHumidity1" class="card-text"></p>
+                        </div>
+                      </div>
+                      <div id="forecastCard2" class="card text-white bg-primary mb-3" style="min-width:15%; height:100%">
+                        <div class="card-body">
+                          <h5 id="forecastDate2" class="card-title"></h5>
+                          <img id="forecastIcon2">
+                          <p id="forecastTemp2" class="card-text"></p>
+                          <p id="forecastHumidity2" class="card-text"></p>
+                        </div>
+                      </div>
+                      <div id="forecastCard3" class="card text-white bg-primary mb-3" style="min-width:15%; height:100%">
+                        <div class="card-body">
+                          <h5 id="forecastDate3" class="card-title"></h5>
+                          <img id="forecastIcon3">
+                          <p id="forecastTemp3" class="card-text"></p>
+                          <p id="forecastHumidity3" class="card-text"></p>
+                        </div>
+                      </div>
+                      <div id="forecastCard4" class="card text-white bg-primary mb-3" style="min-width:15%; height:100%">
+                        <div class="card-body">
+                          <h5 id="forecastDate4" class="card-title"></h5>
+                          <img id="forecastIcon4">
+                          <p id="forecastTemp4" class="card-text"></p>
+                          <p id="forecastHumidity4" class="card-text"></p>
+                        </div>
+                      </div>
+                      <div id="forecastCard5" class="card text-white bg-primary mb-3" style="min-width:15%; height:100%">
+                        <div class="card-body">
+                          <h5 id="forecastDate5" class="card-title"></h5>
+                          <img id="forecastIcon5">
+                          <p id="forecastTemp5" class="card-text"></p>
+                          <p id="forecastHumidity5" class="card-text"></p>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- footer -->
+<footer class="page-footer">
+  <div class="footer-copyright text-center py-3">© Chyna Davis</div>
+</footer>
+<!-- Footer -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- moment.js script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- my javascript/jquery -->
+    <script src="assets/script.js"></script>
+  </body>
+</html>

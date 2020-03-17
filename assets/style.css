@@ -1,0 +1,79 @@
+.jumbotron {
+    text-align: center;
+    background-color: #081e34;
+}
+
+.jumbotron-header {
+    font-size: 100px;
+    font-weight: bold;
+    color: white;
+}
+
+form {
+    margin-top: 30px;
+}
+
+#searchArea {
+    background-color: #b8c5cc;
+}
+
+#weatherInfo {
+    background-color: #e6f7ff;
+}
+
+#searchBtn, #clearBtn {
+    margin-top: 10px;
+    width: 100%;
+    font-size: 20px;
+}
+
+#hr1 {
+    border: 3px solid #081e34;
+    border-radius: 5px;
+    width: 90%;
+}
+
+#hr2 {
+    border: 1px solid #081e34;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.current-city-card {
+    border: 5px solid #081e34;
+    margin-top: 30px;
+}
+
+#cityName, #currentDate {
+    display: inline;
+}
+
+#cityName {
+    padding: 15px;
+    color: white;
+    border-radius: 25px;
+}
+
+#weatherInfo {
+    font-weight: bold;
+}
+
+#currentWeather, #currentTemp, #currentHumidity, #currentWind {
+    font-weight: normal;
+}
+
+#uvIndexColor {
+    padding: 10px;
+    color: white;
+    border-radius: 25px;
+    font-weight: normal;
+}
+
+#forecastCard1, #forecastCard2, #forecastCard3, #forecastCard4, #forecastCard5 {
+    font-weight: normal;
+}
+
+.page-footer {
+    background-color: #081e34;
+    color: white;
+}
