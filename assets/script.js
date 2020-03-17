@@ -10,31 +10,42 @@ function displayWeatherInfo() {
       // if input has text in it, retrieve data
       if (searchedCity != "") {
 
-        // remove "hide" class from weather info sections (once user enters in a city name)
-        $("#currentWeatherSection").removeClass("hide");
-        $("#weatherImage").removeClass("hide");
-        $("#forecastWeatherSection").removeClass("hide");
-        $("#imageLink").removeClass("hide");
-        $("#imageSource").removeClass("hide");
-
         // insert an image via 
         function displayCityImage() {
 
           var pexelsAPIkey = "563492ad6f91700001000001e15517b4e1ce413ab4eae6a9eac1a519";
 
+          // AJAX call for Pexels.com API
           $.ajax({
             url: "https://api.pexels.com/v1/search?query=" + searchedCity + "&per_page=15&page=1",
             method: "GET",
+            // enter authorization key for Pexels.com's API
             beforeSend: function(xhr) {
               xhr.setRequestHeader ("Authorization", pexelsAPIkey)
             }
           }).then(function(imageResponse) {
               console.log(imageResponse);
 
-              $("#weatherImage").attr("src", imageResponse.photos[0].src.landscape);
-
-              $("#imageSource").text("photo by: " + imageResponse.photos[0].photographer);
-              $("#imageSource").attr("href", imageResponse.photos[0].photographer_url);
+              // prevent blank image from displaying if Pexels.com's API has no image in store
+              if (imageResponse.total_results === 0) {
+                $("#weatherImage").addClass("hide");
+                $("#imageLink").addClass("hide");
+                $("#imageSource").addClass("hide");
+                
+                // otherwise, display image and source links normally
+              } else {
+                // remove "hide" class from weather info sections (once user enters in a city name)
+                $("#currentWeatherSection").removeClass("hide");
+                $("#weatherImage").removeClass("hide");
+                $("#forecastWeatherSection").removeClass("hide");
+                $("#imageLink").removeClass("hide");
+                $("#imageSource").removeClass("hide");
+                
+                // fill in image and text
+                $("#weatherImage").attr("src", imageResponse.photos[0].src.landscape);
+                $("#imageSource").text("photo by: " + imageResponse.photos[0].photographer);
+                $("#imageSource").attr("href", imageResponse.photos[0].photographer_url);
+              }
             })
         }
 
