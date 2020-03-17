@@ -14,16 +14,31 @@ function displayWeatherInfo() {
         $("#currentWeatherSection").removeClass("hide");
         $("#weatherImage").removeClass("hide");
         $("#forecastWeatherSection").removeClass("hide");
+        $("#imageLink").removeClass("hide");
+        $("#imageSource").removeClass("hide");
 
-        // insert a random image into HTML
-        function displayRandomImage() {
-          var randomImage = ["img-1.jpg", "img-2.jpg", "img-3.jpg", "img-4.jpg", "img-5.jpg", "img-6.jpg", "img-7.jpg", "img-8.jpg", "img-9.jpg", "img-10.jpg", "img-11.jpg", "img-12.jpg", "img-13.jpg", "img-14.jpg", "img-15.jpg", "img-16.jpg", "img-17.jpg"];
+        // insert an image via 
+        function displayCityImage() {
 
-          for (var i = 0; i < randomImage.length; i++)
-          $("#weatherImage").attr("src", "assets/images/" + randomImage[Math.floor(Math.random() * randomImage.length)]);
+          var pexelsAPIkey = "563492ad6f91700001000001e15517b4e1ce413ab4eae6a9eac1a519";
+
+          $.ajax({
+            url: "https://api.pexels.com/v1/search?query=" + searchedCity + "&per_page=15&page=1",
+            method: "GET",
+            beforeSend: function(xhr) {
+              xhr.setRequestHeader ("Authorization", pexelsAPIkey)
+            }
+          }).then(function(imageResponse) {
+              console.log(imageResponse);
+
+              $("#weatherImage").attr("src", imageResponse.photos[0].src.landscape);
+
+              $("#imageSource").text("photo by: " + imageResponse.photos[0].photographer);
+              $("#imageSource").attr("href", imageResponse.photos[0].photographer_url);
+            })
         }
 
-        displayRandomImage();
+        displayCityImage();
         
         function displayCurrentWeather() {
           // create variable to hold site URL with the user's search input

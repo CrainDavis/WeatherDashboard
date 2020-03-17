@@ -23,7 +23,7 @@ form {
     font-size: 20px;
 }
 #hr1 {
-    border: 3px solid #081e34;
+    border: 1px solid #081e34;
     border-radius: 5px;
     width: 90%;
 }
@@ -74,6 +74,13 @@ form {
     color: #ebf0f6;
     border-radius: 25px;
     font-weight: normal;
+}
+#imageLink {
+    text-decoration: none;
+    margin-right: 20px;
+}
+#imageSource {
+    text-decoration: none;
 }
 #forecastCard-main {
     border: 5px solid #081e34;
