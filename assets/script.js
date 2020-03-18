@@ -33,7 +33,20 @@ function displayWeatherInfo() {
                 $("#imageSource").addClass("hide");
                 // remove "hide" class from weather info sections
                 $("#currentWeatherSection").removeClass("hide");
+                $("#weatherImage").removeClass("hide");
                 $("#forecastWeatherSection").removeClass("hide");
+
+                // display a random image from images folder (via array)
+                function displayRandomImage() {
+                  var randomImage = ["img-1.jpg", "img-2.jpg", "img-3.jpg", "img-4.jpg", "img-5.jpg", "img-6.jpg", "img-7.jpg", "img-8.jpg", "img-9.jpg", "img-10.jpg", "img-11.jpg", "img-12.jpg", "img-13.jpg", "img-14.jpg", "img-15.jpg", "img-16.jpg", "img-17.jpg"];
+
+                  for (var i = 0; i < randomImage.length; i++) {
+                    $("#weatherImage").attr("src", "assets/images/" + randomImage[Math.floor(Math.random() * randomImage.length)]);
+                  }
+                }
+
+                // call function
+                displayRandomImage();
                 
                 // otherwise, display image and source links normally
               } else if ((imageResponse.total_results != 0)) {
@@ -55,11 +68,13 @@ function displayWeatherInfo() {
                   $("#imageSource").text("photo by: " + randomIndex.photographer);
                   $("#imageSource").attr("href", randomIndex.photographer_url);
                 }
+                // call function
                 getRandomIndex();
               }
             })
         }
 
+        // call function
         displayCityImage();
         
         function displayCurrentWeather() {
