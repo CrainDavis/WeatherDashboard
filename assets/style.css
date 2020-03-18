@@ -53,14 +53,14 @@ form {
 .current-city-card {
     border: 5px solid #081e34;
     margin-top: 30px;
-    background-color: #ebf0f6;
+    background-color: white;
 }
 #cityName, #currentDate {
     display: inline;
 }
 #cityName {
     padding: 15px;
-    color: #ebf0f6;
+    color: white;
     border-radius: 25px;
 }
 #weatherInfo {
@@ -71,7 +71,7 @@ form {
 }
 #uvIndexColor {
     padding: 10px;
-    color: #ebf0f6;
+    color: white;
     border-radius: 25px;
     font-weight: normal;
 }
@@ -84,11 +84,11 @@ form {
 }
 #forecastCard-main {
     border: 5px solid #081e34;
-    background-color: #ebf0f6;
+    background-color: white;
 }
 #forecastHeader {
     background-color: #081e34;
-    color: #ebf0f6;
+    color: white;
 }
 #forecastCard1, #forecastCard2, #forecastCard3, #forecastCard4, #forecastCard5 {
     margin-top: 20px;

@@ -31,9 +31,12 @@ function displayWeatherInfo() {
                 $("#weatherImage").addClass("hide");
                 $("#imageLink").addClass("hide");
                 $("#imageSource").addClass("hide");
+                // remove "hide" class from weather info sections
+                $("#currentWeatherSection").removeClass("hide");
+                $("#forecastWeatherSection").removeClass("hide");
                 
                 // otherwise, display image and source links normally
-              } else {
+              } else if ((imageResponse.total_results != 0)) {
                 // remove "hide" class from weather info sections (once user enters in a city name)
                 $("#currentWeatherSection").removeClass("hide");
                 $("#weatherImage").removeClass("hide");
@@ -41,10 +44,18 @@ function displayWeatherInfo() {
                 $("#imageLink").removeClass("hide");
                 $("#imageSource").removeClass("hide");
                 
-                // fill in image and text
-                $("#weatherImage").attr("src", imageResponse.photos[0].src.landscape);
-                $("#imageSource").text("photo by: " + imageResponse.photos[0].photographer);
-                $("#imageSource").attr("href", imageResponse.photos[0].photographer_url);
+                function getRandomIndex() {
+                  // empty out previous randomized number submissions
+                  $("#weatherImage").empty();
+                  $("#imageSource").empty();
+
+                  // fill in image and text with a (new) random selection from the photos array
+                  var randomIndex = imageResponse.photos[Math.floor(Math.random() * imageResponse.photos.length)];
+                  $("#weatherImage").attr("src", randomIndex.src.landscape);
+                  $("#imageSource").text("photo by: " + randomIndex.photographer);
+                  $("#imageSource").attr("href", randomIndex.photographer_url);
+                }
+                getRandomIndex();
               }
             })
         }
