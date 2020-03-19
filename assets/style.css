@@ -63,6 +63,9 @@ form {
     color: white;
     border-radius: 25px;
 }
+#currentDate {
+    font-size: 30px;
+}
 #weatherInfo {
     font-weight: bold;
 }
