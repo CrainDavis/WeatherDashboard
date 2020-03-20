@@ -1,17 +1,21 @@
 // local storage variables
 var storageArr = [];
 var storedCities = JSON.parse(localStorage.getItem("search-history"));
-// save search history buttons to local storage
+
+// get search history from local storage and display in HTML upon page reload
 if (localStorage.getItem("search-history")) {
   for (var i = 0; i < storedCities.length; i++) {
     $("#savedSearches").append('<a class="list-group-item list-group-item-action save-city-btn savedSearch" data-name=' + storedCities[i] + '>' + storedCities[i] + '</a>');
   };
 };
+
 // when list button is clicked
 $("#savedSearches").on("click", ".save-city-btn", function() {
-  // console log search term (city name)
-  // console.log($(this).text());
+//   // console log search term (city name)
+  console.log($(this).text());
+  console.log("------------");
 });
+
 // make Clear Search History button functional
 $("#clearBtn").on("click", function(event) {
   // prevent default page reload
@@ -25,38 +29,47 @@ $("#clearBtn").on("click", function(event) {
 // Event handler for search button
 $(document).on("click", "#searchBtn, .savedSearch", function(event) {
   console.log("fired");
+  console.log("------------");
   var searchedCity = "";
   if ($(this).hasClass("savedSearch")) {
     searchedCity = $(this).attr("data-name");
-    console.log(searchedCity)
+    console.log(searchedCity);
+    console.log(this);
   } else {
     // store input text into a variable
     searchedCity = $("#searchedCity").val();
   }
+  
   // prevent default form submission
   event.preventDefault();
   
-  // push search term (city name) into array
-  storageArr.push(searchedCity);
-  // set array to local storage
-  localStorage.setItem("search-history", JSON.stringify(storageArr));
-  // append search term to search history list
-  $("#savedSearches").append('<a class="list-group-item list-group-item-action save-city-btn savedSearch" data-name=' + searchedCity + '>' + searchedCity + '</a>');
+  if (storageArr.indexOf(searchedCity) < 0) {
+    // push search term (city name) into array
+    storageArr.push(searchedCity);
+    // set array to local storage
+    localStorage.setItem("search-history", JSON.stringify(storageArr));
+    // append search term to HTML search history list
+    $("#savedSearches").append('<a class="list-group-item list-group-item-action save-city-btn savedSearch" data-name=' + searchedCity + '>' + searchedCity + '</a>');
+  }
+  
   function displayAllWeatherInfo() {
     // if input has text in it, retrieve data
   if (searchedCity != "") {    
     // create variable to hold site URL with the user's search input
     var mainQueryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + searchedCity + "&units=imperial" + "&appid=289f73c10e5aeb27cc83c6167ef20a5d";
     // AJAX call for main weather info section (except for UV index)
+    
     $.ajax({
       url: mainQueryURL,
       method: "GET"
     }).then(function(mainResponse) {
       // print object in console
-      console.log("weather info via city name:");
-      console.log(mainResponse);
+      // console.log("weather info via city name:");
+      // console.log(mainResponse);
+     
       // variable for weather icons
       var iconURL = "https://openweathermap.org/img/wn/" + mainResponse.weather[0].icon + "@2x.png";
+      
       // fill in HTML city, date, icon
       $("#cityName").css("background-color", "#081e34").text(mainResponse.name);
       $("#currentDate").text(" (" + moment().format("l") + ") ");
@@ -66,6 +79,7 @@ $(document).on("click", "#searchBtn, .savedSearch", function(event) {
       $("#currentTemp").text(Math.floor(mainResponse.main.temp) + "°F");
       $("#currentHumidity").text(mainResponse.main.humidity + "%");
       $("#currentWind").text(mainResponse.wind.speed + " mph");
+      
       // insert an image from Pexels.com
       function weatherImage() {
         $("#currentWeatherSection").removeClass("hide");
@@ -73,6 +87,7 @@ $(document).on("click", "#searchBtn, .savedSearch", function(event) {
         $("#imageLink").removeClass("hide");
         $("#imageSource").removeClass("hide");
         $("#forecastWeatherSection").removeClass("hide");
+        
         // display an image from the images folder based on OpenWeather API's weather description
         if (mainResponse.weather[0].description === "clear sky") {
           $("#weatherImage").attr("src", "assets/images/sky-clear.jpeg");
@@ -93,6 +108,9 @@ $(document).on("click", "#searchBtn, .savedSearch", function(event) {
         } else if (mainResponse.weather[0].description === "light rain") {
           $("#weatherImage").attr("src", "assets/images/rain-light.jpeg");
           $("#imageSource").text("photo by: Kaique Rocha").attr("href", "https://www.pexels.com/@kaiquestr");
+        } else if (mainResponse.weather[0].description === "light intensity drizzle") {
+          $("#weatherImage").attr("src", "assets/images/rain-light-drizzle.jpeg");
+          $("#imageSource").text("photo by: veeterzy").attr("href", "https://www.pexels.com/@veeterzy");
         } else if (mainResponse.weather[0].description === "moderate rain") {
           $("#weatherImage").attr("src", "assets/images/rain-moderate.jpeg");
           $("#imageSource").text("photo by: Bedis ElAcheche").attr("href", "https://www.pexels.com/@bedis-elacheche-310026");
@@ -114,26 +132,33 @@ $(document).on("click", "#searchBtn, .savedSearch", function(event) {
         } else if (mainResponse.weather[0].description === "thunderstorm with heavy rain") {
           $("#weatherImage").attr("src", "assets/images/thunderstorm-with-heavy-rain.jpeg");
           $("#imageSource").text("photo by: Johannes Plenio").attr("href", "https://www.pexels.com/@jplenio");
+        } else if (mainResponse.weather[0].description === "mist") {
+          $("#weatherImage").attr("src", "assets/images/mist.jpeg");
+          $("#imageSource").text("photo by: Pixabay").attr("href", "https://www.pexels.com/@pixabay");
         } else {
           $("#weatherImage").addClass("hide");
           $("#imageLink").addClass("hide");
           $("#imageSource").addClass("hide");
         }
       }
+      
       // call function
       weatherImage();
+      
       // create latitude & longitude variables to retrieve UV index info
       var currentLat = mainResponse.coord.lat;
       var currentLon = mainResponse.coord.lon;
+      
       // UV index url using latitude & longitude info
       var UVindexURL = "https://api.openweathermap.org/data/2.5/uvi?" + "&appid=289f73c10e5aeb27cc83c6167ef20a5d" + "&lat=" + currentLat + "&lon=" + currentLon;
+      
       // AJAX call for UV index
       $.ajax({
         url: UVindexURL,
         method: "GET"
       }).then(function(uvResponse) {
-        console.log("UV index info:");
-        console.log(uvResponse);
+        // console.log("UV index info:");
+        // console.log(uvResponse);
         // fill in UV index text and determine color based on number
         $("#uvIndexColor").text(uvResponse.value);
         if (uvResponse.value >= 0 && uvResponse.value < 3) {
@@ -149,16 +174,19 @@ $(document).on("click", "#searchBtn, .savedSearch", function(event) {
         }
       });
     });
+    
     function showForecast() {
       // 5-day forecast weather info
       var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + searchedCity + "&units=imperial" + "&appid=289f73c10e5aeb27cc83c6167ef20a5d";
+      
       // AJAX call for 5-day forecast info
       $.ajax({
         url: forecastURL,
         method: "GET"
       }).then(function(forecastResponse) {
-        console.log("5-day forecast info:");
-        console.log(forecastResponse);
+        // console.log("5-day forecast info:");
+        // console.log(forecastResponse);
+        
         // fill in HTML with info from 12PM each day
         // day 1:
         $("#forecastDate1").text(moment().add(1, "days").format("l"));
@@ -187,12 +215,15 @@ $(document).on("click", "#searchBtn, .savedSearch", function(event) {
         $("#forecastHumidity5").text("humidity: " + forecastResponse.list[35].main.humidity + "%");
       });
     };
+    
     // call function
     showForecast();
+    
     // if search field is left blank, alert the user to input a city name
   } else {
       alert("You must enter a city name!");
     };
   }
+  
   displayAllWeatherInfo();
 });
