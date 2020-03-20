@@ -10,21 +10,15 @@
 `![Image description](link-to-image)`
 
 ## Issues to be Resolved:
-* ISSUE #1: any stored city names that are more than one word (ie "Los Angeles" or "New York") only have values stored for the first word. Thus, clicking the newly-created "Los Angeles" button will not display the weather information for Los Angeles, and will create a new button called "Los". This "Los" value will also be stored in the local storage array.
-![issue #1](issues/issue1-1.png)
-![issue #1](issues/issue1-2.png)
+* ISSUE #1: when the page is refreshed, the storage array and buttons persist, BUT if any new search terms are input by the user, those new search terms will replace what is already in the storage array. Thus, when the page is refreshed again, only the newest search terms are displayed as buttons on the page.
+![issue #1](issues/issue2-1.png)
+![issue #1](issues/issue2-2.png)
+![issue #1](issues/issue2-3.png)
+![issue #1](issues/issue2-4.png)
 
 ---------------------------------------------------------------------------------------------------
 
-* ISSUE #2: when the page is refreshed, the storage array and buttons persist, BUT if any new search terms are input by the user, those new search terms will replace what is already in the storage array. Thus, when the page is refreshed again, only the newest search terms are displayed as buttons on the page.
-![issue #2](issues/issue2-1.png)
-![issue #2](issues/issue2-2.png)
-![issue #2](issues/issue2-3.png)
-![issue #2](issues/issue2-4.png)
-
----------------------------------------------------------------------------------------------------
-
-* ISSUE #3: the page does not display the most recently searched city's weather info upon re-opening or refreshing the page.
+* ISSUE #2: the page does not display the most recently searched city's weather info upon re-opening or refreshing the page.
 
 ## Resources:
 * Bootstrap CSS (https://getbootstrap.com/)

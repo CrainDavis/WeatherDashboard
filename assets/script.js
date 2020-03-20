@@ -49,7 +49,7 @@ $(document).on("click", "#searchBtn, .savedSearch", function(event) {
     // set array to local storage
     localStorage.setItem("search-history", JSON.stringify(storageArr));
     // append search term to HTML search history list
-    $("#savedSearches").append('<a class="list-group-item list-group-item-action save-city-btn savedSearch" data-name=' + searchedCity + '>' + searchedCity + '</a>');
+    $("#savedSearches").append('<a class="list-group-item list-group-item-action save-city-btn savedSearch" data-name="' + searchedCity + '">' + searchedCity + '</a>');
   }
   
   function displayAllWeatherInfo() {
