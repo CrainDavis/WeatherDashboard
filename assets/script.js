@@ -2,7 +2,7 @@
 var storageArr = [];
 var storedCities = JSON.parse(localStorage.getItem("search-history"));
 
-// get search history from local storage and display in HTML upon page reload
+// get search history from local storage and display buttons in HTML upon page reload
 if (localStorage.getItem("search-history")) {
   for (var i = 0; i < storedCities.length; i++) {
     $("#savedSearches").append('<a class="list-group-item list-group-item-action save-city-btn savedSearch" data-name=' + storedCities[i] + '>' + storedCities[i] + '</a>');
@@ -11,7 +11,7 @@ if (localStorage.getItem("search-history")) {
 
 // when list button is clicked
 $("#savedSearches").on("click", ".save-city-btn", function() {
-//   // console log search term (city name)
+// console log search term (city name)
   console.log($(this).text());
   console.log("------------");
 });
@@ -222,6 +222,7 @@ $(document).on("click", "#searchBtn, .savedSearch", function(event) {
     // if search field is left blank, alert the user to input a city name
   } else {
       alert("You must enter a city name!");
+      return
     };
   }
   
