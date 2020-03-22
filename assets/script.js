@@ -2,10 +2,15 @@
 var storageArr = [];
 var storedCities = JSON.parse(localStorage.getItem("search-history"));
 
+var combinedCities = storageArr.concat(storedCities);
+console.log("combined: " + combinedCities);
+
 // get search history from local storage and display buttons in HTML upon page reload
 if (localStorage.getItem("search-history")) {
-  for (var i = 0; i < storedCities.length; i++) {
-    $("#savedSearches").append('<a class="list-group-item list-group-item-action save-city-btn savedSearch" data-name=' + storedCities[i] + '>' + storedCities[i] + '</a>');
+  for (var i = 0; i < combinedCities.length; i++) {
+    if (combinedCities[i] != null) {
+      $("#savedSearches").append('<a class="list-group-item list-group-item-action save-city-btn savedSearch" data-name="' + combinedCities[i] + '">' + combinedCities[i] + '</a>');
+    }
   };
 };
 
@@ -43,11 +48,11 @@ $(document).on("click", "#searchBtn, .savedSearch", function(event) {
   // prevent default form submission
   event.preventDefault();
   
-  if (storageArr.indexOf(searchedCity) < 0) {
+  if (combinedCities.indexOf(searchedCity) < 0) {
     // push search term (city name) into array
-    storageArr.push(searchedCity);
+    combinedCities.push(searchedCity);
     // set array to local storage
-    localStorage.setItem("search-history", JSON.stringify(storageArr));
+    localStorage.setItem("search-history", JSON.stringify(combinedCities));
     // append search term to HTML search history list
     $("#savedSearches").append('<a class="list-group-item list-group-item-action save-city-btn savedSearch" data-name="' + searchedCity + '">' + searchedCity + '</a>');
   }

@@ -10,14 +10,6 @@
 `![Image description](link-to-image)`
 
 ## Issues to be Resolved:
-* ISSUE #1: when the page is refreshed, the storage array and buttons persist, BUT if any new search terms are input by the user, those new search terms will replace what is already in the storage array. Thus, when the page is refreshed again, only the newest search terms are displayed as buttons on the page.
-![issue #1](issues/issue2-1.png)
-![issue #1](issues/issue2-2.png)
-![issue #1](issues/issue2-3.png)
-![issue #1](issues/issue2-4.png)
-
----------------------------------------------------------------------------------------------------
-
 * ISSUE #2: the page does not display the most recently searched city's weather info upon re-opening or refreshing the page.
 
 ## Resources:
