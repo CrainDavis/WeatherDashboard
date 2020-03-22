@@ -7,10 +7,7 @@
 * Lastly, this application also saves the user's previous searches in a list, which also function as buttons for the user to click and check again. This function is made possible through employing the browser's local storage capability. Through this local storage, the user can also view their most-recently searched city upon re-opening the application. The user also has the choice to clear their search history if they wish, simply by clicking the clear-all button.
 
 ## Image of Application:
-`![Image description](link-to-image)`
-
-## Issues to be Resolved:
-* ISSUE #2: the page does not display the most recently searched city's weather info upon re-opening or refreshing the page.
+![Application Image](application/app-image.png)
 
 ## Resources:
 * Bootstrap CSS (https://getbootstrap.com/)
