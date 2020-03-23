@@ -44,12 +44,15 @@ $(document).on("click", "#searchBtn, .savedSearch", function(event) {
   event.preventDefault();
   
   if (combinedCities.indexOf(searchedCity) < 0) {
-    // push search term (city name) into array
-    combinedCities.push(searchedCity);
-    // set array to local storage
-    localStorage.setItem("search-history", JSON.stringify(combinedCities));
-    // append search term to HTML search history list
-    $("#savedSearches").append('<a class="list-group-item list-group-item-action save-city-btn savedSearch" data-name="' + searchedCity + '">' + searchedCity + '</a>');
+    // do not append button if search input is empty
+    if (searchedCity != "") {
+      // push search term (city name) into array
+      combinedCities.push(searchedCity);
+      // set array to local storage
+      localStorage.setItem("search-history", JSON.stringify(combinedCities));
+      // append search term to HTML search history list
+      $("#savedSearches").append('<a class="list-group-item list-group-item-action save-city-btn savedSearch" data-name="' + searchedCity + '">' + searchedCity + '</a>');
+    }
   }
   
   function displayAllWeatherInfo() {
