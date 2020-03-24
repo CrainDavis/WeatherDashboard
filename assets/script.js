@@ -78,7 +78,7 @@ $(document).on("click", "#searchBtn, .savedSearch", function(event) {
       $("#currentWeather").text(mainResponse.weather[0].description);
       $("#currentTemp").text(Math.floor(mainResponse.main.temp) + "°F");
       $("#currentHumidity").text(mainResponse.main.humidity + "%");
-      $("#currentWind").text(mainResponse.wind.speed + " mph");
+      $("#currentWind").text(Math.floor(mainResponse.wind.speed) + " mph");
       
       // insert an image from Pexels.com
       function weatherImage() {
@@ -256,7 +256,7 @@ searchedCity = localStorage.getItem("lastCityWeatherSearch");
         $("#currentWeather").text(mainResponse.weather[0].description);
         $("#currentTemp").text(Math.floor(mainResponse.main.temp) + "°F");
         $("#currentHumidity").text(mainResponse.main.humidity + "%");
-        $("#currentWind").text(mainResponse.wind.speed + " mph");
+        $("#currentWind").text(Math.floor(mainResponse.wind.speed) + " mph");
         
         // insert an image from Pexels.com
         function weatherImage() {
