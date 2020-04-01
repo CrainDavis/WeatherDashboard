@@ -6,8 +6,8 @@
 * In addition, the application is coded to display an image from the "images" folder. All images are originally from Pexels.com. This image displayed in the application is chosen based on the OpenWeather API's weather description (ie "clear sky", "broken clouds", "heavy snow", etc.) for the user's chosen city. Links to Pexels.com and credits to the photograph are displayed below the image.
 * Lastly, this application also saves the user's previous searches in a list, which also function as buttons for the user to click and check again. This function is made possible through employing the browser's local storage capability. Through this local storage, the user can also view their most-recently searched city upon re-opening the application. The user also has the choice to clear their search history if they wish, simply by clicking the clear-all button.
 
-## Image of Application:
-![Application Image](application/app-image.png)
+## View Application:
+![Application GIF](images/WeatherDash.gif)
 
 ## Resources:
 * Bootstrap CSS (https://getbootstrap.com/)
@@ -21,4 +21,3 @@
 
 ## URLs:
 * deployed application: https://craindavis.github.io/WeatherDashboard/
-* GitHub repository: https://github.com/CrainDavis/WeatherDashboard
