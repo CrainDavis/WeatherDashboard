@@ -7,6 +7,7 @@ an application that allows the user to input any city in the world, and subseque
 * [Usage](#usage)
 * [License](#license)
 * [Contributing](#contributing)
+* [Resources](#resources)
 * [Tests](#tests)
 * [Questions](#questions)
 ## Installation:
@@ -137,7 +138,7 @@ enforcement ladder.
 For answers to common questions about this code of conduct, see the FAQ at
 https://www.contributor-covenant.org/faq. Translations are available at
 https://www.contributor-covenant.org/translations.
-## Credits:
+## Resources:
 * [Bootstrap CSS](https://getbootstrap.com/)
 * [OpenWeather API](https://openweathermap.org/)
     * [current weather data](https://openweathermap.org/current)
