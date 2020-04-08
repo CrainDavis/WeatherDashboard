@@ -17,6 +17,7 @@ none required
 * clicking these city buttons will re-display the current weather information for that city
 * upon re-opening the application, the user can view their last-searched city's current weather information
 
+![Application GIF](images/WeatherDash.gif)
 ## License:
 MIT License
 
