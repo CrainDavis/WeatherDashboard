@@ -1,7 +1,13 @@
 # Weather Dashboard
   ![GitHub repo size](https://img.shields.io/github/repo-size/CrainDavis/WeatherDashboard?style=for-the-badge) ![GitHub code size](https://img.shields.io/github/languages/code-size/CrainDavis/WeatherDashboard?color=gold&style=for-the-badge) ![GitHub language count](https://img.shields.io/github/languages/count/CrainDavis/WeatherDashboard?color=green&style=for-the-badge) ![GitHub top language](https://img.shields.io/github/languages/top/CrainDavis/WeatherDashboard?color=red&style=for-the-badge)
+
+---
+
 ## Description:
 an application that allows the user to input any city in the world, and subsequently view that city's current weather data (weather conditions, temperature, humidity, wind speed, and UV index), as well as a five-day forecast
+
+---
+
 ## Table of Contents:
 * [Installation](#installation)
 * [Usage](#usage)
@@ -10,8 +16,15 @@ an application that allows the user to input any city in the world, and subseque
 * [Resources](#resources)
 * [Tests](#tests)
 * [Questions](#questions)
+
+---
+
 ## Installation:
 none required
+* just [open the application](https://craindavis.github.io/WeatherDashboard/) in your browser
+
+---
+
 ## Usage:
 * input any city name and hit the search button
 * the user's searches will be saved so that the user can view their previous searches just by clicking the buttons in the left column
@@ -19,10 +32,13 @@ none required
 * upon re-opening the application, the user can view their last-searched city's current weather information
 
 ![Application GIF](images/WeatherDash.gif)
+
+---
+
 ## License:
 MIT License
 
-Copyright (c) [2020] [Chyna Davis]
+Copyright © 2020 Chyna Davis
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -41,6 +57,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
 ## Contributing:
 Contributor Covenant Code of Conduct
 Our Pledge
@@ -138,16 +157,25 @@ enforcement ladder.
 For answers to common questions about this code of conduct, see the FAQ at
 https://www.contributor-covenant.org/faq. Translations are available at
 https://www.contributor-covenant.org/translations.
+
+---
+
 ## Resources:
 * [Bootstrap CSS](https://getbootstrap.com/)
 * [OpenWeather API](https://openweathermap.org/)
-    * [current weather data](https://openweathermap.org/current)
-    * [5-day weather forecast](https://openweathermap.org/forecast5)
-    * [ultraviolet index (beta)](https://openweathermap.org/api/uvi)
+* [current weather data](https://openweathermap.org/current)
+* [5-day weather forecast](https://openweathermap.org/forecast5)
+* [ultraviolet index (beta)](https://openweathermap.org/api/uvi)
 * [Pexels](https://www.pexels.com/)
-    * see application for credits for each individual image
+* see application for credits for each individual image
 * [Moment.js library](https://momentjs.com/)
+
+---
+
 ## Tests:
+
+---
+
 ## Questions: 
 for any questions, please contact:
 
