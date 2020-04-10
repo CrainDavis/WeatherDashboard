@@ -163,11 +163,11 @@ https://www.contributor-covenant.org/translations.
 ## Resources:
 * [Bootstrap CSS](https://getbootstrap.com/)
 * [OpenWeather API](https://openweathermap.org/)
-* [current weather data](https://openweathermap.org/current)
-* [5-day weather forecast](https://openweathermap.org/forecast5)
-* [ultraviolet index (beta)](https://openweathermap.org/api/uvi)
+    * [current weather data](https://openweathermap.org/current)
+    * [5-day weather forecast](https://openweathermap.org/forecast5)
+    * [ultraviolet index (beta)](https://openweathermap.org/api/uvi)
 * [Pexels](https://www.pexels.com/)
-* see application for credits for each individual image
+    * see application for credits for each individual image
 * [Moment.js library](https://momentjs.com/)
 
 ---
