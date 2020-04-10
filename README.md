@@ -36,7 +36,7 @@ none required
 ---
 
 ## License:
-MIT License
+[MIT License](https://opensource.org/licenses/MIT)
 
 Copyright © 2020 Chyna Davis
 
