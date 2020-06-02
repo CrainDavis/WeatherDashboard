@@ -4,17 +4,17 @@
 ---
 
 ## Description:
-an application that allows the user to input any city in the world, and subsequently view that city's current weather data (weather conditions, temperature, humidity, wind speed, and UV index), as well as a five-day forecast
+This is an application that uses the OpenWeatherAPI to allow the user to input any city in the world, and subsequently view that city's current weather data (weather conditions, temperature, humidity, wind speed, and UV index), as well as a five-day forecast. The user's search history will also be saved as buttons (by using LocalStorage) so that current weather data can be viewed again and again.
 
 ---
 
 ## Table of Contents:
 * [Installation](#installation)
 * [Usage](#usage)
+* [Demonstration](#demonstration)
 * [License](#license)
 * [Contributing](#contributing)
 * [Resources](#resources)
-* [Tests](#tests)
 * [Questions](#questions)
 
 ---
@@ -31,6 +31,9 @@ none required
 * clicking these city buttons will re-display the current weather information for that city
 * upon re-opening the application, the user can view their last-searched city's current weather information
 
+---
+
+## Demonstration:
 ![Application GIF](images/WeatherDash.gif)
 
 ---
@@ -169,10 +172,6 @@ https://www.contributor-covenant.org/translations.
 * [Pexels](https://www.pexels.com/)
     * see application for credits for each individual image
 * [Moment.js library](https://momentjs.com/)
-
----
-
-## Tests:
 
 ---
 
