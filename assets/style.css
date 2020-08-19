@@ -1,11 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  position: relative;
+}
+.app-body {
+  min-height: 100vh; /* will cover the 100% of viewport */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 100px; /* height of your footer */
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
 /* jumbotron */
 .jumbotron {
   padding: 10px;
   text-align: center;
   background-color: #081e34;
+  margin-bottom: 0px;
 }
 .jumbotron-header {
-  font-size: 80px;
+  font-size: 40px;
   font-weight: bold;
   color: white;
 }
@@ -16,6 +42,7 @@ form {
 }
 #searchArea {
   background-color: #b8c5cc;
+  padding: 10px;
 }
 #searchBtn,
 #clearBtn {
@@ -39,11 +66,15 @@ form {
 #weatherImage {
   margin-top: 30px;
   width: 100%;
-  height: 410px;
+  height: auto;
   border-radius: 5px;
 }
 #weatherInfo {
   background-color: #e6f7ff;
+  font-weight: bold;
+}
+.weather-info-section {
+  padding: 10px;
 }
 #hr2 {
   border: 1px solid #081e34;
@@ -58,17 +89,16 @@ form {
 #cityName,
 #currentDate {
   display: inline;
+  font-size: 12px;
 }
 #cityName {
-  padding: 15px;
+  padding: 10px;
   color: white;
   border-radius: 25px;
 }
-#currentDate {
-  font-size: 30px;
-}
-#weatherInfo {
-  font-weight: bold;
+#currentIcon {
+  width: 80px;
+  height: auto;
 }
 #currentWeather,
 #currentTemp,
@@ -82,10 +112,12 @@ form {
   border-radius: 25px;
   font-weight: normal;
 }
-#imageLink {
-  text-decoration: none;
-  margin-right: 20px;
+.image-info {
+  padding: 5px;
+  font-size: 10px;
+  text-align: center;
 }
+#imageLink,
 #imageSource {
   text-decoration: none;
 }
@@ -96,6 +128,7 @@ form {
 #forecastHeader {
   background-color: #081e34;
   color: white;
+  text-align: center;
 }
 #forecastCard1,
 #forecastCard2,
@@ -104,10 +137,115 @@ form {
 #forecastCard5 {
   margin-top: 20px;
   font-weight: normal;
+  width: 100%;
+  height: 100%;
+  align-items: center;
 }
-
-/* page footer */
 .page-footer {
   background-color: #081e34;
   color: white;
+}
+.copyright-text {
+  color: #b8c5cc;
+  font-weight: bold;
+}
+.copyright-text:hover {
+  text-decoration: none;
+  color: lightskyblue;
+}
+
+/* =============================================================== */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  /* jumbotron */
+  .jumbotron-header {
+    font-size: 50px;
+  }
+
+  /* current weather section */
+  #cityName,
+  #currentDate {
+    font-size: 25px;
+  }
+  #cityName {
+    padding: 12px;
+  }
+  #currentIcon {
+    width: 100px;
+    height: auto;
+  }
+  .image-info {
+    font-size: 16px;
+  }
+  #forecastCard1,
+  #forecastCard2,
+  #forecastCard3,
+  #forecastCard4,
+  #forecastCard5 {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  #cityName,
+  #currentDate {
+    font-size: 20px;
+  }
+  #cityName {
+    padding: 10px;
+  }
+  .image-info {
+    font-size: 18px;
+  }
+  #forecastCard1,
+  #forecastCard2,
+  #forecastCard3,
+  #forecastCard4,
+  #forecastCard5 {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #cityName,
+  #currentDate {
+    font-size: 16px;
+  }
+  #currentIcon {
+    width: 90px;
+    height: auto;
+  }
+  #forecastCard1,
+  #forecastCard2,
+  #forecastCard3,
+  #forecastCard4,
+  #forecastCard5 {
+    width: 30%;
+    height: 100%;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  #cityName,
+  #currentDate {
+    font-size: 28px;
+  }
+  #currentIcon {
+    width: 100px;
+    height: auto;
+  }
+  #forecastCard1,
+  #forecastCard2,
+  #forecastCard3,
+  #forecastCard4,
+  #forecastCard5 {
+    width: 18%;
+    height: 100%;
+  }
 }
