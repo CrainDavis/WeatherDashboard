@@ -127,6 +127,7 @@ form {
 }
 #forecastSection {
   padding: 10px;
+  margin-top: 0px;
 }
 #forecastCard-main {
   border: 5px solid #081e34;
@@ -232,6 +233,10 @@ form {
   }
   .image-info {
     font-size: 12px;
+  }
+  #currentWeatherSection, #weatherImage {
+    width: 100%;
+    height: 400px;
   }
   #forecastCard1,
   #forecastCard2,
