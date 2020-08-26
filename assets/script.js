@@ -91,50 +91,50 @@ $(document).on("click", "#searchBtn, .savedSearch", function(event) {
         // display an image from the images folder based on OpenWeather API's weather description
         if (mainResponse.weather[0].description === "clear sky") {
           $("#weatherImage").attr("src", "assets/images/sky-clear.jpeg");
-          $("#imageSource").text("photo by: Francesco Ungaro").attr("href", "https://www.pexels.com/@francesco-ungaro");
+          $("#imageSource").text("by: Francesco Ungaro").attr("href", "https://www.pexels.com/@francesco-ungaro");
         } else if (mainResponse.weather[0].description === "few clouds") {
           $("#weatherImage").attr("src", "assets/images/clouds-few.jpeg");
-          $("#imageSource").text("photo by: Pixabay").attr("href", "https://www.pexels.com/@pixabay");
+          $("#imageSource").text("by: Pixabay").attr("href", "https://www.pexels.com/@pixabay");
         } else if (mainResponse.weather[0].description === "scattered clouds") {
           $("#weatherImage").attr("src", "assets/images/clouds-scattered.jpeg");
-          $("#imageSource").text("photo by: Pixabay").attr("href", "https://www.pexels.com/@pixabay");
+          $("#imageSource").text("by: Pixabay").attr("href", "https://www.pexels.com/@pixabay");
         } else if (mainResponse.weather[0].description === "broken clouds") {
           $("#weatherImage").attr("src", "assets/images/clouds-broken.jpeg");
-          $("#imageSource").text("photo by: Brett Sayles");
+          $("#imageSource").text("by: Brett Sayles");
           $("#imageSource").attr("href", "https://www.pexels.com/@brett-sayles");
         } else if (mainResponse.weather[0].description === "overcast clouds") {
           $("#weatherImage").attr("src","assets/images/clouds-overcast.jpeg");
-          $("#imageSource").text("photo by: Ben Herbert").attr("href", "https://www.pexels.com/@nzbenzimages");
+          $("#imageSource").text("by: Ben Herbert").attr("href", "https://www.pexels.com/@nzbenzimages");
         } else if (mainResponse.weather[0].description === "light rain") {
           $("#weatherImage").attr("src", "assets/images/rain-light.jpeg");
-          $("#imageSource").text("photo by: Kaique Rocha").attr("href", "https://www.pexels.com/@kaiquestr");
+          $("#imageSource").text("by: Kaique Rocha").attr("href", "https://www.pexels.com/@kaiquestr");
         } else if (mainResponse.weather[0].description === "light intensity drizzle") {
           $("#weatherImage").attr("src", "assets/images/rain-light-drizzle.jpeg");
-          $("#imageSource").text("photo by: veeterzy").attr("href", "https://www.pexels.com/@veeterzy");
+          $("#imageSource").text("by: veeterzy").attr("href", "https://www.pexels.com/@veeterzy");
         } else if (mainResponse.weather[0].description === "moderate rain") {
           $("#weatherImage").attr("src", "assets/images/rain-moderate.jpeg");
-          $("#imageSource").text("photo by: Bedis ElAcheche").attr("href", "https://www.pexels.com/@bedis-elacheche-310026");
+          $("#imageSource").text("by: Bedis ElAcheche").attr("href", "https://www.pexels.com/@bedis-elacheche-310026");
         } else if (mainResponse.weather[0].description === "heavy intensity rain") {
           $("#weatherImage").attr("src", "assets/images/rain-heavy.jpeg");
-          $("#imageSource").text("photo by: Aleksandar Pasaric").attr("href", "https://www.pexels.com/@apasaric");
+          $("#imageSource").text("by: Aleksandar Pasaric").attr("href", "https://www.pexels.com/@apasaric");
         } else if (mainResponse.weather[0].description === "light snow") {
           $("#weatherImage").attr("src", "assets/images/snow-light.jpeg");
-          $("#imageSource").text("photo by: Oleg Magni").attr("href", "https://www.pexels.com/@oleg-magni");
+          $("#imageSource").text("by: Oleg Magni").attr("href", "https://www.pexels.com/@oleg-magni");
         } else if (mainResponse.weather[0].description === "snow") {
           $("#weatherImage").attr("src", "assets/images/snow-moderate.jpeg");
-          $("#imageSource").text("photo by: Gratisography").attr("href","https://www.pexels.com/@gratisography");
+          $("#imageSource").text("by: Gratisography").attr("href","https://www.pexels.com/@gratisography");
         } else if (mainResponse.weather[0].description === "heavy snow") {
           $("#weatherImage").attr("src", "assets/images/snow-heavy.jpeg");
-          $("#imageSource").text("photo by: Pixabay").attr("href", "https://www.pexels.com/@pixabay");
+          $("#imageSource").text("by: Pixabay").attr("href", "https://www.pexels.com/@pixabay");
         } else if (mainResponse.weather[0].description === "thunderstorm") {
           $("#weatherImage").attr("src", "assets/images/thunderstorm.jpeg");
-          $("#imageSource").text("photo by: Frank Cone").attr("href", "https://www.pexels.com/@frank-cone-140140");
+          $("#imageSource").text("by: Frank Cone").attr("href", "https://www.pexels.com/@frank-cone-140140");
         } else if (mainResponse.weather[0].description === "thunderstorm with heavy rain") {
           $("#weatherImage").attr("src", "assets/images/thunderstorm-with-heavy-rain.jpeg");
-          $("#imageSource").text("photo by: Johannes Plenio").attr("href", "https://www.pexels.com/@jplenio");
+          $("#imageSource").text("by: Johannes Plenio").attr("href", "https://www.pexels.com/@jplenio");
         } else if (mainResponse.weather[0].description === "mist") {
           $("#weatherImage").attr("src", "assets/images/mist.jpeg");
-          $("#imageSource").text("photo by: Pixabay").attr("href", "https://www.pexels.com/@pixabay");
+          $("#imageSource").text("by: Pixabay").attr("href", "https://www.pexels.com/@pixabay");
         } else {
           $("#weatherImage").addClass("hide");
           $("#imageLink").addClass("hide");
@@ -269,50 +269,50 @@ searchedCity = localStorage.getItem("lastCityWeatherSearch");
           // display an image from the images folder based on OpenWeather API's weather description
           if (mainResponse.weather[0].description === "clear sky") {
             $("#weatherImage").attr("src", "assets/images/sky-clear.jpeg");
-            $("#imageSource").text("photo by: Francesco Ungaro").attr("href", "https://www.pexels.com/@francesco-ungaro");
+            $("#imageSource").text("by: Francesco Ungaro").attr("href", "https://www.pexels.com/@francesco-ungaro");
           } else if (mainResponse.weather[0].description === "few clouds") {
             $("#weatherImage").attr("src", "assets/images/clouds-few.jpeg");
-            $("#imageSource").text("photo by: Pixabay").attr("href", "https://www.pexels.com/@pixabay");
+            $("#imageSource").text("by: Pixabay").attr("href", "https://www.pexels.com/@pixabay");
           } else if (mainResponse.weather[0].description === "scattered clouds") {
             $("#weatherImage").attr("src", "assets/images/clouds-scattered.jpeg");
-            $("#imageSource").text("photo by: Pixabay").attr("href", "https://www.pexels.com/@pixabay");
+            $("#imageSource").text("by: Pixabay").attr("href", "https://www.pexels.com/@pixabay");
           } else if (mainResponse.weather[0].description === "broken clouds") {
             $("#weatherImage").attr("src", "assets/images/clouds-broken.jpeg");
-            $("#imageSource").text("photo by: Brett Sayles");
+            $("#imageSource").text("by: Brett Sayles");
             $("#imageSource").attr("href", "https://www.pexels.com/@brett-sayles");
           } else if (mainResponse.weather[0].description === "overcast clouds") {
             $("#weatherImage").attr("src","assets/images/clouds-overcast.jpeg");
-            $("#imageSource").text("photo by: Ben Herbert").attr("href", "https://www.pexels.com/@nzbenzimages");
+            $("#imageSource").text("by: Ben Herbert").attr("href", "https://www.pexels.com/@nzbenzimages");
           } else if (mainResponse.weather[0].description === "light rain") {
             $("#weatherImage").attr("src", "assets/images/rain-light.jpeg");
-            $("#imageSource").text("photo by: Kaique Rocha").attr("href", "https://www.pexels.com/@kaiquestr");
+            $("#imageSource").text("by: Kaique Rocha").attr("href", "https://www.pexels.com/@kaiquestr");
           } else if (mainResponse.weather[0].description === "light intensity drizzle") {
             $("#weatherImage").attr("src", "assets/images/rain-light-drizzle.jpeg");
-            $("#imageSource").text("photo by: veeterzy").attr("href", "https://www.pexels.com/@veeterzy");
+            $("#imageSource").text("by: veeterzy").attr("href", "https://www.pexels.com/@veeterzy");
           } else if (mainResponse.weather[0].description === "moderate rain") {
             $("#weatherImage").attr("src", "assets/images/rain-moderate.jpeg");
-            $("#imageSource").text("photo by: Bedis ElAcheche").attr("href", "https://www.pexels.com/@bedis-elacheche-310026");
+            $("#imageSource").text("by: Bedis ElAcheche").attr("href", "https://www.pexels.com/@bedis-elacheche-310026");
           } else if (mainResponse.weather[0].description === "heavy intensity rain") {
             $("#weatherImage").attr("src", "assets/images/rain-heavy.jpeg");
-            $("#imageSource").text("photo by: Aleksandar Pasaric").attr("href", "https://www.pexels.com/@apasaric");
+            $("#imageSource").text("by: Aleksandar Pasaric").attr("href", "https://www.pexels.com/@apasaric");
           } else if (mainResponse.weather[0].description === "light snow") {
             $("#weatherImage").attr("src", "assets/images/snow-light.jpeg");
-            $("#imageSource").text("photo by: Oleg Magni").attr("href", "https://www.pexels.com/@oleg-magni");
+            $("#imageSource").text("by: Oleg Magni").attr("href", "https://www.pexels.com/@oleg-magni");
           } else if (mainResponse.weather[0].description === "snow") {
             $("#weatherImage").attr("src", "assets/images/snow-moderate.jpeg");
-            $("#imageSource").text("photo by: Gratisography").attr("href","https://www.pexels.com/@gratisography");
+            $("#imageSource").text("by: Gratisography").attr("href","https://www.pexels.com/@gratisography");
           } else if (mainResponse.weather[0].description === "heavy snow") {
             $("#weatherImage").attr("src", "assets/images/snow-heavy.jpeg");
-            $("#imageSource").text("photo by: Pixabay").attr("href", "https://www.pexels.com/@pixabay");
+            $("#imageSource").text("by: Pixabay").attr("href", "https://www.pexels.com/@pixabay");
           } else if (mainResponse.weather[0].description === "thunderstorm") {
             $("#weatherImage").attr("src", "assets/images/thunderstorm.jpeg");
-            $("#imageSource").text("photo by: Frank Cone").attr("href", "https://www.pexels.com/@frank-cone-140140");
+            $("#imageSource").text("by: Frank Cone").attr("href", "https://www.pexels.com/@frank-cone-140140");
           } else if (mainResponse.weather[0].description === "thunderstorm with heavy rain") {
             $("#weatherImage").attr("src", "assets/images/thunderstorm-with-heavy-rain.jpeg");
-            $("#imageSource").text("photo by: Johannes Plenio").attr("href", "https://www.pexels.com/@jplenio");
+            $("#imageSource").text("by: Johannes Plenio").attr("href", "https://www.pexels.com/@jplenio");
           } else if (mainResponse.weather[0].description === "mist") {
             $("#weatherImage").attr("src", "assets/images/mist.jpeg");
-            $("#imageSource").text("photo by: Pixabay").attr("href", "https://www.pexels.com/@pixabay");
+            $("#imageSource").text("by: Pixabay").attr("href", "https://www.pexels.com/@pixabay");
           } else {
             $("#weatherImage").addClass("hide");
             $("#imageLink").addClass("hide");

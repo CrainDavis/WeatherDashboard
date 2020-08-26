@@ -60,6 +60,9 @@ form {
 .hide {
   display: none;
 }
+#currentWeatherInfo {
+  padding: 0px;
+}
 #currentWeatherSection {
   width: 100%;
 }
@@ -72,6 +75,7 @@ form {
 #weatherInfo {
   background-color: #e6f7ff;
   font-weight: bold;
+  padding: 20px;
 }
 .weather-info-section {
   padding: 10px;
@@ -120,6 +124,9 @@ form {
 #imageLink,
 #imageSource {
   text-decoration: none;
+}
+#forecastSection {
+  padding: 10px;
 }
 #forecastCard-main {
   border: 5px solid #081e34;
@@ -212,6 +219,9 @@ form {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  #currentWeatherInfo {
+    padding-right: 10px;
+  }
   #cityName,
   #currentDate {
     font-size: 16px;
@@ -219,6 +229,9 @@ form {
   #currentIcon {
     width: 90px;
     height: auto;
+  }
+  .image-info {
+    font-size: 12px;
   }
   #forecastCard1,
   #forecastCard2,
@@ -239,6 +252,9 @@ form {
   #currentIcon {
     width: 100px;
     height: auto;
+  }
+  .image-info {
+    font-size: 15px;
   }
   #forecastCard1,
   #forecastCard2,
