@@ -234,7 +234,8 @@ form {
   .image-info {
     font-size: 12px;
   }
-  #currentWeatherSection, #weatherImage {
+  #currentWeatherSection,
+  #weatherImage {
     width: 100%;
     height: 400px;
   }
